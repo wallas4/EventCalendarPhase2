@@ -47,15 +47,20 @@ to the calendar.day method:
 
 ```
 <div id="calendar">
-<%= calendar_for(@events) do |calendar| %>
-  <%= calendar.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
-  <%= calendar.day(:day_method => :start_time) do |day, events| %>
-    <%= day.day %>
-    <% events.each do |event| %>
-      <%= link_to event.name, event %>
+  <h2 id="month">
+      <%= link_to "<", root_path(month: (@date.prev_month).strftime("%Y-%m-%d")) %>
+    <%= @date.strftime("%b %Y") %>
+    <%= link_to ">", root_path(month: (@date.next_month).strftime("%Y-%m-%d")) %>
+  </h2>
+  <%= calendar_for @events, year: @date.year, month: @date.month do |c| %>
+    <%= c.head('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat') %>
+    <%= c.day(:day_method => :start_time) do |day, events| %>
+      <%= day.day %>
+      <% events.each do |event| %>
+        <%= link_to event.name, event %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 </div>
 ```
 
