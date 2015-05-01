@@ -43,3 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+# use table_builder for calendar display
+gem "watu_table_builder", :require => "table_builder"
