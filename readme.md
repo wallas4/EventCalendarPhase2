@@ -34,7 +34,7 @@ iterate through each calendar day, and if that day contains an event,
 print out its name along with a corresponding link to that event.
 Remember the catch for the calendar.day method: we have to tell it which
 field in the event to use for comparison.  By default, it looks for an
-Event.date method, which we do not have.  We have an Event.start_time
+Event.date method, which we do not have.  We have an Event.start
 method, and we have to pass that to the calendar.day method:
 
 ```
