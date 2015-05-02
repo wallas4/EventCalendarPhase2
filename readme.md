@@ -56,5 +56,5 @@ method, and we have to pass that to the calendar.day method:
 </div>
 ```
 
-Fire up the test server, or create a few unit test, and verify that your
+Fire up the test server, or create a few unit tests, and verify that your
 new Event Calendar is functioning properly!
