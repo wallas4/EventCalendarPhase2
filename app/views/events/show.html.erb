@@ -20,5 +20,12 @@
   <%= @event.location %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+  <% @event.users.each do |user| %>
+    <%= user.name %>
+  <%end  %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
